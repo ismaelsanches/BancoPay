@@ -1,0 +1,102 @@
+. Login de Pessoa Física:
+
+	Atributos:
+
+	Nome: Representa o nome do cliente.
+	Senha: Usada para autenticar o cliente.
+	Email: Endereço de email do cliente.
+	CPF (Cadastro de Pessoa Física): Identificação única do cliente.
+	Funcionalidade:
+
+	O objeto de Login de Pessoa Física armazena as informações de autenticação e 								identificação do cliente. É usado para verificar a identidade do cliente ao acessar a conta 	bancária.
+	
+	
+2. Conta Bancária:
+
+	Atributos:
+
+	Número da Conta: Identificador único da conta bancária.
+	Titular: Uma referência ao objeto de Login de Pessoa Física associado à conta.
+	Saldo: O saldo atual na conta bancária.
+	Funcionalidades:
+
+	Depósito:
+	Permite ao cliente depositar dinheiro em sua conta.
+	Valida se o valor do depósito é positivo antes de atualizar o saldo.
+	Atualiza o saldo após o depósito.
+	
+	Saque:
+	Permite ao cliente sacar dinheiro de sua conta.
+	Valida se o valor do saque é positivo e se o saldo é suficiente.
+	Atualiza o saldo após o saque.
+
+	Consulta de Saldo:
+	Permite ao cliente verificar o saldo atual em sua conta.
+
+	Fluxo de Funcionamento:
+	O cliente fornece suas credenciais (CPF e senha) durante o processo de login.
+	O sistema verifica se as credenciais correspondem a um objeto de Login de Pessoa Física válido.
+	Após a autenticação bem-sucedida, o cliente pode acessar sua conta bancária associada.
+	O cliente pode realizar operações bancárias, como depósito, saque e consulta de saldo, na conta bancária.
+	
+	Segurança:
+	A segurança é uma consideração crítica em qualquer sistema bancário. Deve-se adotar medidas para proteger as credenciais dos clientes, como armazenar senhas de forma segura (com hash e salt) e implementar autenticação de dois fatores, se possível.
+
+	Considerações Finais:
+	Este é um modelo simplificado de um sistema bancário em Kotlin, enfocado na autenticação de pessoa física e operações básicas de conta. Em um ambiente real, o projeto seria mais complexo, com considerações adicionais, como proteção contra fraudes, histórico de transações, interfaces de usuário e segurança aprimorada. Além disso, você deve estar ciente das regulamentações bancárias e de privacidade ao implementar um sistema financeiro.
+	
+===============================================================================================
+	
+	1. Classe PessoaFisicaLogin:
+
+Atributos:
+
+Nome (String): Armazena o nome completo do cliente.
+Senha (String): Representa a senha do cliente para fins de autenticação.
+Email (String): Guarda o endereço de e-mail do cliente.
+CPF (String): Armazena o número de CPF do cliente, que serve como identificação única.
+Funcionalidades:
+
+Esta classe serve como um contêiner de informações de login para uma pessoa física.
+Ela não possui métodos específicos, apenas os atributos para armazenar os dados de login e identificação do cliente.
+2. Classe ContaBancaria:
+
+Atributos:
+
+Número da Conta (String): Identificador único da conta bancária.
+Titular (PessoaFisicaLogin): Uma referência ao objeto de PessoaFisicaLogin associado à conta.
+Saldo (Double): O saldo atual na conta bancária.
+Funcional idades:
+
+Método depositar(valor: Double):
+
+Permite ao cliente depositar dinheiro em sua conta.
+Valida se o valor do depósito é positivo antes de atualizar o saldo.
+Atualiza o saldo após o depósito.
+Método sacar(valor: Double):
+
+Permite ao cliente sacar dinheiro de sua conta.
+Valida se o valor do saque é positivo e se o saldo é suficiente.
+Atualiza o saldo após o saque.
+Método consultarSaldo(): Double:
+
+Permite ao cliente verificar o saldo atual em sua conta.
+3. Fluxo de Funcionamento:
+
+O cliente cria um objeto de PessoaFisicaLogin com suas informações pessoais e de login.
+Em seguida, cria uma ContaBancaria associada a esse objeto de login.
+Durante o login, o sistema verifica as credenciais (CPF e senha) para garantir a autenticidade.
+Após a autenticação bem-sucedida, o cliente pode acessar a ContaBancaria associada.
+O cliente pode realizar operações bancárias, como depósito, saque e consulta de saldo, usando os métodos fornecidos pela ContaBancaria.
+4. Segurança:
+
+Para melhorar a segurança, você deve implementar técnicas de proteção, como o armazenamento seguro das senhas (usando hash e salt) e a autenticação de dois fatores, se possível.
+Considere adicionar logs de transações e implementar medidas de segurança adicionais, dependendo dos requisitos específicos do seu sistema bancário.
+5. Considerações Finais:
+
+Este é um esboço simplificado de um sistema bancário em Kotlin, focado em autenticação de pessoa física e operações básicas de conta.
+Em um sistema real, você precisaria adicionar mais funcionalidades, como histórico de transações, proteção contra fraudes, interfaces de usuário e conformidade com regulamentações bancárias.
+É importante destacar que a segurança é uma preocupação primordial em sistemas bancários, e você deve seguir as melhores práticas de segurança ao implementar seu projeto.
+	
+	
+
